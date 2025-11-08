@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎉 Invitación Pokémon de Dylan Oscar ⚡</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive;
+      color: #fff;
+      text-align: center;
+      background: radial-gradient(circle at center, #ffcc00, #6b69d8);
+      position: relative;
+    }
+
+    /* Fondo de video */
+    .fondo-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* Botón de sonido */
+    .btn-sonido {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      z-index: 3;
+      background: rgba(255,0,0,0.8);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #000;
+    }
+    .btn-sonido:hover {
+      background: #ffeb3b;
+      color: #000;
+    }
+
+    /* Contenedor principal */
+    .tarjeta {
+      position: relative;
+      z-index: 2;
+      background: rgba(0,0,0,0.5);
+      width: 90%;
+      max-width: 450px;
+      margin: 40px auto;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 0 20px rgba(255,255,0,0.6);
+      overflow: hidden;
+    }
+
+    /* Texto animado */
+    h1 {
+      font-size: 2.5em;
+      color: #ffeb3b;
+      text-shadow: 2px 2px 6px #000;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff0000; }
+      to { text-shadow: 0 0 30px #ffff00; }
+    }
+
+    .sub {
+      font-size: 1.2em;
+      margin: 10px 0;
+      color: #fff;
+    }
+
+    .nombre {
+      font-size: 2em;
+      color: #4fc3f7;
+      text-shadow: 2px 2px 4px #000;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Número con “años” */
+    .numero {
+      font-size: 3.5em;
+      color: #ff4444;
+      font-weight: bold;
+      text-shadow: 3px 3px 6px #000;
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 5px;
+    }
+
+    .numero span {
+      font-size: 0.5em;
+      color: #ff4444;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .info {
+      margin: 5px 0;
+      font-size: 1.1em;
+    }
+
+    .foto {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin: 10px auto;
+      background: url('https://i.ibb.co/sJwMZ3k/pokeball.png') center/cover no-repeat;
+    }
+
+    /* Botón de WhatsApp */
+    .btn {
+      display: inline-block;
+      background: #ff0000;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      box-shadow: 0 0 10px #000;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #ffeb3b;
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    footer {
+      font-size: 0.8em;
+      color: #fff;
+      margin-top: 15px;
+      text-shadow: 1px 1px 3px black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Video de fondo -->
+  <video id="videoFondo" class="fondo-video" autoplay loop muted>
+    <source src="pokemon-atrapalos-ya-00_gAsTFv3x.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+  </video>
+
+  <!-- Botón para activar sonido -->
+  <button class="btn-sonido" id="btnSonido">🔊</button>
+
+  <!-- Tarjeta principal -->
+  <div class="tarjeta">
+    <h1>¡YO TE ELIJO!</h1>
+    <div class="sub">Es tiempo de celebrar 🎉</div>
+
+    <div class="foto" style="background-image: url('https://i.imgur.com/yYIPoCo.png'); background-size: cover;"></div>
+
+    <div class="nombre">Dylan Oscar</div>
+    <div class="sub">Está cumpliendo</div>
+
+    <!-- Número con “años” -->
+    <div class="numero">9 <span>años</span></div>
+
+    <div class="info">📅 <strong>10 de Noviembre</strong></div>
+    <div class="info">📍 <strong>🕒 12:00 PM</strong></div>
+    <div class="info">📍 <strong>Colegio Talentos</strong></div>
+
+    <div class="info">Ven con toda tu energía Pokémon ⚡</div>
+
+    <a href="https://wa.me/519XXXXXXXX?text=Hola!%20Confirmo%20mi%20asistencia%20al%20cumple%20de%20Dylan%20Oscar%20⚡" class="btn">Confirmar Asistencia</a>
+    <footer>© 2025 Fiesta de Cumpleaños de Dylan Oscar ⚡</footer>
+  </div>
+
+  <script>
+    const video = document.getElementById('videoFondo');
+    const btn = document.getElementById('btnSonido');
+
+    btn.addEventListener('click', () => {
+      if (video.muted) {
+        video.muted = false;
+        video.volume = 1;
+        btn.textContent = '🔈';
+      } else {
+        video.muted = true;
+        btn.textContent = '🔊';
+      }
+    });
+  </script>
+</body>
+</html>
